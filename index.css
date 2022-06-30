@@ -1,0 +1,258 @@
+
+
+html *{
+    font-size: 1em ;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+
+
+
+
+
+
+header{
+    display: flex;
+}
+
+header nav{
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: white;
+    padding-bottom: 10%;
+
+    
+}
+
+#viewScore{
+    color:blueviolet;
+    font-size: 1.5rem;
+}
+
+#time{
+    font-size: 1.5rem;
+    padding-right: 50px;
+
+}
+
+#title{
+    font-size: 2rem;
+    color: white;
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+    /* padding-left: 10%; */
+    /* padding:0.5rem; */
+    margin: 0.5rem;
+    height: fit-content !important;
+
+}
+
+#question{
+    padding-left:0 !important;
+}
+
+#title h3{
+    color:black;
+    font-size: 2.5rem;
+    padding-left: 10%;
+    margin: auto;
+}
+
+#quizContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 0.5rem;
+    padding-left: 20%;
+    padding-right: 10%;
+    /* background-color: rgb(67, 7, 7); */
+}
+
+#startButton{
+    background-color: indigo;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+   
+    
+}
+
+#startButton:hover{
+    background-color: darkviolet;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+#listContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    /* padding-left: 10%; */
+    padding-right: 10%;
+    
+}
+
+#listContainer div{
+ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+#listContainer ul{
+    padding-left: 0px;
+
+}
+
+
+li{
+    list-style: none;
+}
+
+li button{
+    background-color: indigo;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    /* display: none; */
+
+}
+
+li button:hover{
+    background-color: darkviolet;
+}
+
+#guide{
+    font-size: 25px;;
+}
+
+#Q1{
+
+}
+
+#Q2{
+
+}
+
+#Q3{
+
+}
+
+#Q4{
+
+}
+
+.question{
+    display: none;
+}
+
+#underline{
+    border-bottom: 1px solid black;
+    
+}
+
+#rightOrWrong{
+    /* display: flex; */
+    font-size: 1.5rem;
+    /* padding-left: 10%; */
+    /* margin: auto; */
+    color: rgb(90, 90, 90);
+    font-size: large;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    margin: 0px !important;
+}
+
+footer{
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    /* padding: 0.5rem; */
+    background-color: white;
+    
+}
+
+#line{
+
+}
+
+#scoreSubmission{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: white;
+    padding-bottom: 10%;
+}
+
+#backButton{
+    background-color: indigo;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+#clearScores{
+    background-color: indigo;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    cursor: pointer;
+
+
+}
+
+#highScoreList{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    /* padding: 0.5rem; */
+    background-color: rgb(222, 222, 222);
+    /* padding-bottom: 10%; */
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 20px;
+    width: 20%;
+}
