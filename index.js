@@ -103,6 +103,7 @@ startButton.addEventListener("click", () => {
 
 //if any BUTTON is clicked
 questionList.addEventListener("click", (e) =>{
+    try{
 console.log("clicked inside the list container");
 const isButton = e.target.nodeName === "BUTTON";
 
@@ -120,8 +121,15 @@ if(!isButton){
     return;
 }
 
+
+    
+
 changeQuestion(index);
 
+}
+catch(err){
+    console.log("caught bubbling error for button click");
+}
 
 });
 
