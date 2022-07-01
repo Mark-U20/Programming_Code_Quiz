@@ -38,6 +38,8 @@ var backButton = document.getElementById("backButton");
 var clearScores = document.getElementById("clearScores");
 var viewScore = document.getElementById("viewScore");
 //////////////////////////////////////////////////////////////////////////////////
+
+//containers for the main quiz and leaderboard
 var listContainer = document.getElementById("listContainer");
 var highScoreList = document.getElementById("highScoreList");
 var scoreListContainer = document.getElementById("scoreListContainer");
@@ -59,7 +61,7 @@ var index = 0;
 var initials = [];
 var highScores = [];
 
-//array of ovjects
+//array of objects with questions and answers
 var questions = [
     {
         question: question1,
@@ -101,12 +103,21 @@ startButton.addEventListener("click", () => {
 
 });
 
-//if any BUTTON is clicked
+//if any BUTTON(quiz answer) is clicked
 questionList.addEventListener("click", (e) =>{
-    try{
+   
 console.log("clicked inside the list container");
 const isButton = e.target.nodeName === "BUTTON";
 
+//checks to see if the clicked element is a button since
+//bubbling was used in the event listener
+if(!isButton){
+    console.log("not a button");
+    return;
+}
+
+
+//gets the #id of the button clicked and checks the inngerHTML(the answer text) and checks if it is correct
 if(document.getElementById(String(e.target.id)).innerHTML == questions[index - 1].correctAnswer){
     correctAnswers += 1;
     console.log("correct answer");
@@ -116,25 +127,19 @@ else{
     correctCheck.innerHTML = "Wrong!";
 }
 console.log(document.getElementById(String(e.target.id)).innerText + " == " + questions[index - 1].correctAnswer);
-if(!isButton){
-    console.log("not a button");
-    return;
-}
 
 
     
 
 changeQuestion(index);
 
-}
-catch(err){
-    console.log("caught bubbling error for button click");
-}
+
+
 
 });
 
 
-
+//upon submitting add initials to leaderboard
 submitScore.addEventListener("click", () => {
     console.log("submit score clicked");
     var initial = document.getElementById('initials').value;
@@ -177,10 +182,9 @@ viewScore.addEventListener("click", () => {
     showLeaderboard();
 });
 
-
+//Main quiz function that removes the main menu buttons and text
 function runQuiz() {
 
-    //clear intro part of quiz and prepare to load quiz questions
 
 
     console.log("running quiz");
@@ -196,7 +200,7 @@ function runQuiz() {
 
 }
 
-
+//timer function fro the quiz
 function startTimer() {
     var timeLeft = 30;
     var clock = setInterval(function () {
@@ -216,7 +220,7 @@ function startTimer() {
 
 
 
-
+//function for loading questions and answers from the array
 function changeQuestion(ind) {
     //if you are at the last question then end the quiz
     if(ind == questions.length){
@@ -240,6 +244,7 @@ function changeQuestion(ind) {
 
 }
 
+//brings back the main menu buttons and text
 function resetQuiz() {
     correctAnswers = 0;
     index = 0;
@@ -248,12 +253,12 @@ function resetQuiz() {
     scoreListContainer.classList.add('remove');
     startButton.classList.remove('remove');
 
-    //reset the buttons
     // question.innerHTML = title;
 
 }
 
 function endQuiz() {
+    
     //show the end screen
     highScores.push(correctAnswers);
     questionList.classList.add('remove');
@@ -266,6 +271,7 @@ function endQuiz() {
     //resetQuiz();
 }
 
+//loads and display the leaderboard
 function showLeaderboard() {
 
     scoreSubmit.classList.add('remove');
