@@ -201,9 +201,10 @@ function runQuiz() {
 }
 
 //timer function fro the quiz
+var clock;
 function startTimer() {
     var timeLeft = 30;
-    var clock = setInterval(function () {
+    clock = setInterval(function () {
         timeLeft--;
         timer.innerText = "Time: " + timeLeft;
         console.log(timeLeft);
@@ -211,6 +212,7 @@ function startTimer() {
             clearInterval(clock);
             //show leaderboard
             endQuiz();
+            return;
         }
     }, 1000);
 }
@@ -258,7 +260,7 @@ function resetQuiz() {
 }
 
 function endQuiz() {
-    
+    clearInterval(clock);
     //show the end screen
     highScores.push(correctAnswers);
     questionList.classList.add('remove');
